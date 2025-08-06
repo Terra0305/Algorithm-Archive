@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Baek10798",
+            "request": "launch",
+            "mainClass": "Baek10798",
+            "projectName": "Algorithm-Archive_c5ed4e15"
+        },
+        {
+            "type": "java",
+            "name": "Baek10824",
+            "request": "launch",
+            "mainClass": "Baek10824",
+            "projectName": "Algorithm-Archive_c5ed4e15"
+        },
+        {
+            "type": "java",
+            "name": "Baek11721",
+            "request": "launch",
+            "mainClass": "Baek11721",
+            "projectName": "Algorithm-Archive_c5ed4e15"
+        },
+        {
+            "type": "java",
+            "name": "Baek1427",
+            "request": "launch",
+            "mainClass": "Baek1427",
+            "projectName": "Algorithm-Archive_c5ed4e15"
+        },
+        {
+            "type": "java",
+            "name": "Baek31403",
+            "request": "launch",
+            "mainClass": "Baek31403",
+            "projectName": "Algorithm-Archive_c5ed4e15"
+        }
+    ]
+}
