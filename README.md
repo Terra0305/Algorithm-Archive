@@ -1,18 +1,28 @@
-## Getting Started
+# 👨‍💻 박성민의 알고리즘 문제 풀이 아카이브
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+> "단순히 정답을 맞히는 것을 넘어, 문제 해결 과정을 기록하고 더 나은 코드를 고민하기 위한 공간입니다."
 
-## Folder Structure
+이곳은 제가 꾸준히 알고리즘 문제 해결 능력을 단련하고, 그 과정을 기록하기 위해 운영하는 개인 레포지토리입니다. 모든 코드는 Java로 작성되었습니다.
 
-The workspace contains two folders by default, where:
+---
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 🔥 나의 현황 (My Status)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=jpsm0305)](https://solved.ac/jpsm0305)
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### 🛠️ 사용 기술 (Tech Stack)
+
+* **Language:** `Java`
+* **IDE:** `VSCODE`
+* **Version Control:**  `GitHub`
+
+---
+
+### 🌱 학습 목표 (My Goals)
+
+1.  꾸준함:꾸준히 풀고 커밋하여 GitHub 잔디밭을 가꾸는 것을 목표로 합니다.
+2.  **다양한 풀이:** 하나의 정답에 만족하지 않고, 다른 사람의 풀이를 참고하며 더 효율적이고 다양한 해결 방법을 학습합니다.
+3.  **코드 품질:** 클린 코드를 지향하며, 변수명과 메서드 구조를 명확하게 작성하는 습관을 기릅니다.
