@@ -28,7 +28,7 @@ public class Baek10815 {
 
         System.out.println(sb.toString().trim());
         
-        
+    
 
 
         
