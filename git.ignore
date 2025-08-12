@@ -1,0 +1,10 @@
+# Compiled output
+/out/
+/bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
