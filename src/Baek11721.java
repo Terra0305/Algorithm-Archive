@@ -3,7 +3,7 @@ public class Baek11721 {
 
     public static void main(String[] args) throws Exception {
         Scanner sc= new Scanner(System.in);
-        
+
         String N = sc.nextLine();
 
         StringBuilder sb = new StringBuilder();
@@ -12,11 +12,11 @@ public class Baek11721 {
         {
             if(i>1){
                 if(i%10==0)
-            {
-                sb.append("\n");
+                {
+                    sb.append("\n");
+                }
             }
-            }
-            
+
             sb.append(N.charAt(i));
         }
         String answer = sb.toString();
