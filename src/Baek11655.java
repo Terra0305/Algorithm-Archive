@@ -3,7 +3,8 @@ public class Baek11655 {
 
     public static void main(String[] args) throws Exception {
         Scanner sc= new Scanner(System.in);
-        
+
+
         String st= sc.nextLine();
 
         StringBuilder sb= new StringBuilder();
@@ -11,29 +12,31 @@ public class Baek11655 {
         for(int i=0;i<st.length();i++)
         {
             char c = st.charAt(i);
-
-            if (Character.isUpperCase(c)) {
-                char shifted = (char) (c + 13);
-                if (shifted > 'Z') {
-                    sb.append((char) (c - 13));
-                } else {
-                    sb.append(shifted);
+            if(Character.isUpperCase(c)){
+                if((char)(c+13)>'Z'){
+                    sb.append((char)(c-13));
                 }
-            } 
-            else if (Character.isLowerCase(c)) {
-                char shifted = (char) (c + 13);
-                if (shifted > 'z') {
-                    sb.append((char) (c - 13));
-                } else {
-                    sb.append(shifted);
+                else{
+                    sb.append((char)(c+13));
                 }
-            } 
-            else { 
-                sb.append(c); 
+            }
+            else if(Character.isLowerCase(c)){
+                if((char)(c+13)>'z'){
+                    sb.append((char)(c-13));
+                }else{
+                    sb.append((char)(c+13));
+                }
+            }
+            else{
+                sb.append(c);
             }
         }
+
         System.out.println(sb.toString());
-        
+
+
+
+
     }
 }
 
@@ -51,11 +54,11 @@ ROT13은 알파벳 대문자와 소문자에만 적용할 수 있다. 알파벳�
 출력
 첫째 줄에 S를 ROT13으로 암호화한 내용을 출력한다.
 
-예제 입력 1 
+예제 입력 1
 Baekjoon Online Judge
-예제 출력 1 
+예제 출력 1
 Onrxwbba Bayvar Whqtr
-예제 입력 2 
+예제 입력 2
 One is 1
-예제 출력 2 
+예제 출력 2
 Bar vf 1*/
