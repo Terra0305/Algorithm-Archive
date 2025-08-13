@@ -7,7 +7,7 @@ public class Baek1302 {
        
         int a = Integer.parseInt(sc.nextLine());
 
-        Map<String,Integer>BookMap = new HashMap<>();
+        Map<String,Integer>BookMap = new HashMap<>(); 
 
 
         for(int i=0;i<a;i++)
