@@ -3,24 +3,30 @@ public class Baek12605 {
     public static void main(String[] args){
 
         Scanner sc =new Scanner(System.in);
-
-        Stack<String> Stackst = new Stack<>();
-
-        int N =Integer.parseInt(sc.nextLine()); //테스트 케이스 갯수 
         
-        List<String> StackList = new ArrayList<>(); 
+        int N =sc.nextInt(); //반복횟수
+        sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+
 
         for(int i=0;i<N;i++){
+            Stack<String> Stackst = new Stack<>();
             String st = sc.nextLine();
-            String [] words = st.split(" ");
+            String[] words = st.split(" ");
+
             for(int j=0;j<words.length;j++){
-                Stackst.push(words[i]); //여기서 문장을 다 담았음.
+                Stackst.push(words[j]);
             }
-            for(int k=0;k<Stackst.size();i++){
-                StackList.add(Stackst.pop());
-            }
+            sb.append("Case #"+(i+1)+": ");
+            while(!Stackst.isEmpty()){
+                sb.append(Stackst.pop()+" ");
+            } 
+            sb.append("\n");
         }
-        System.out.println(StackList.toString());
+        
+        System.out.println(sb.toString());
+        
+        
     }
 }
 
