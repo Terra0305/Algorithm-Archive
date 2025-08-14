@@ -9,39 +9,41 @@ public class Baek1302 {
 
         Map<String,Integer>BookMap = new HashMap<>(); 
 
-
-        for(int i=0;i<a;i++)
-        {
-            String Bookname = sc.nextLine();
-
-            int currentcount =BookMap.getOrDefault(Bookname, 0);
-
-            BookMap.put(Bookname, currentcount+1);
-        }
+        for(int i=0;i<a;i++){
+            String currentbook = sc.nextLine();
+            int currentcount = BookMap.getOrDefault(currentbook, 0);
+            
+            BookMap.put(currentbook,currentcount+1);
+        } //여기까지 count 끝남 
 
         Set<String>Keyset = BookMap.keySet();
-
         List<String>KeyList = new ArrayList<>(Keyset);
 
-        String Bestseller = new String();
-        int max = 0;
 
-        for(int i=0;i<KeyList.size();i++)
-        {
+        String Bestseller = "";
+        int Max = 0;
+
+        for(int i=0;i<KeyList.size();i++){
             String currentbook = KeyList.get(i);
-            int currentcount = BookMap.get(currentbook);
+            int currrentcount = BookMap.get(currentbook);
 
-            if(currentcount>max){
-                 max=currentcount;
-                Bestseller=currentbook;
-            }else if(currentcount == max){
+            if(currrentcount>Max){
+                Bestseller = currentbook;
+                Max=currrentcount;
+            }else if(currrentcount == Max){
                 if(currentbook.compareTo(Bestseller)<0){
                     Bestseller = currentbook;
                 }
             }
         }
-            System.out.println(Bestseller);
+        System.out.println(Bestseller);
 
+        
+
+
+
+
+        
     }
 }
 /*김형택은 탑문고의 직원이다. 김형택은 계산대에서 계산을 하는 직원이다. 김형택은 그날 근무가 끝난 후에, 오늘 판매한 책의 제목을 보면서 가장 많이 팔린 책의 제목을 칠판에 써놓는 일도 같이 하고 있다.
