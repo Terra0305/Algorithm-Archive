@@ -6,7 +6,7 @@ public class NotsolveBaek13241 {
         long a = sc.nextLong();
         long b = sc.nextLong();
 
-        int answer =1;
+        long answer =1;
 
         while(true){
             if(answer%a==0 && answer%b==0)

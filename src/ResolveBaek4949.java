@@ -1,45 +1,46 @@
 import java.util.*;
-
 public class ResolveBaek4949 {
-    public static void main(String[] args){
-        Scanner sc= new Scanner(System.in);
-        StringBuilder sb= new StringBuilder();
 
-        while(true){
+    public static void main(String[] args)throws Exception {
+        Scanner sc = new Scanner(System. in);
+
+        //int N = sc.nextInt();
+
+        StringBuilder sb = new StringBuilder();
+        
+        while (true) {
+            Stack<Character> stack = new Stack<>();
             String st = sc.nextLine();
-            if(st.equals("."))
+            if (st.equals(".")) //온점이 들어오면 종료
                 break;
-                Stack<Character> stack = new Stack<>();
-                                boolean bn =true;
+                            boolean bn = true;
 
-            
-            for(int i=0;i<st.length();i++){
-                
-                char c =st.charAt(i);
-                if(c =='(' || c =='[')
+            for (int j = 0; j < st.length(); j++) {
+                char c = st.charAt(j);
+                if (c == '(' || c =='[') {
                     stack.push(c);
-                
-                else if(c == ')'){
-                    if(stack.isEmpty() || stack.pop()!='('){
-                        sb.append("no\n");
-                        bn=false;
-                        break;
-                    }
-                }
-                  else if(c == '['){
-                    if(stack.isEmpty() || stack.pop()!='['){
-                        sb.append("no\n");
-                        bn=false;
-                        break;
-                    }
-                }   
-                }
-             if(stack.isEmpty()||bn==true){
-                sb.append("yes\n");
-            }
-            }
-            System.out.println(sb.toString());
-           
-        }
-    }
+                } 
 
+                else if (c == ')') {
+                    if(stack.isEmpty() || stack.pop() !='('){
+                        bn=false;
+                        break;
+                    }
+                } else if (c == ']') {
+                    if (stack.isEmpty() || stack.pop() !='[') {
+                        bn=false;
+                        break;
+                    }
+                }
+
+
+                
+            }
+            if(stack.isEmpty()&&bn==true)
+                    sb.append("yes\n");
+                else 
+                    sb.append("no\n");
+        }
+        System.out.println(sb.toString());
+    }
+}
