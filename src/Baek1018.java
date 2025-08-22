@@ -16,7 +16,7 @@ public class Baek1018 {
             chararr[i] = br.readLine().toCharArray(); //2차원 배열에 모두 입력
         }   
         int mincount =64;
-
+        
         for(int startRow = 0; startRow<=N-8;startRow++){
             for(int startCol = 0; startCol<=M-8;startCol++){
                 int countB=0;
