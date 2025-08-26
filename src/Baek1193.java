@@ -27,7 +27,7 @@ public class Baek1193 {
                 }else{
                     bunja = sum-N+1;
                     bunmo = i-(sum-N);
-                    break;
+                    break;  
                 }
             }
         }        
