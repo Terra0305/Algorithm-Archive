@@ -29,28 +29,27 @@ public class Baek11724 {
 
         int count = 0;
 
-        for(int i=1;i<=N;i++){
-            if(!visited[i]){
-                visited[i] =true;
+        for (int i = 1; i <= N; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
                 count++;
-            
-            Queue<Integer>queue = new LinkedList<>();
-            queue.add(i);
-            while(!queue.isEmpty()){
-                int current = queue.poll();
 
-                for(int j=0;j<graph[current].size();j++){
-                    int neighbor = graph[current].get(j);
+                Queue<Integer> queue = new LinkedList<>();
+                queue.add(i);
+                while(!queue.isEmpty()){
+                    int current = queue.poll();
 
+                    for(int j=0;j<graph[current].size();j++){
+                        int negihbor = graph[current].get(j);
 
-                    if(!visited[neighbor]){
-                        visited[neighbor] =true;
-                        queue.add(neighbor);
+                        if(!visited[negihbor]){
+                            visited[negihbor]=true;
+                            queue.add(negihbor);
+                        }
                     }
-
                 }
             }
-            }
+
         }
         sb.append(count);
         System.out.println(sb);
