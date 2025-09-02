@@ -27,10 +27,9 @@ public class Baek4963 {
                 for (int i = 0; i < h; i++) {
                     for (int j = 0; j < w; j++) {
                         if (!visited[i][j] && graph[i][j] == 1) {
-                            count++;
                             visited[i][j] = true;
+                            count++;
                             Queue<int[]> queue = new LinkedList<>();
-
                             queue.add(new int[] { i, j });
 
                             while (!queue.isEmpty()) {
@@ -38,22 +37,23 @@ public class Baek4963 {
                                 int row = current[0];
                                 int col = current[1];
 
-                                int[] dr = { -1, 1, 0, 0, -1, -1, 1, 1 };
-                                int[] dc = { 0, 0, -1, 1, -1, 1, 1, -1 };
+                                int[] drow = { -1, 1, 0, 0, -1, -1, 1, 1 };
+                                int[] dcol = { 0, 0, -1, 1, -1, 1, 1, -1 };
 
-                                for (int k = 0; k < 8; k++) {
-                                    int nextrow = row + dr[k];
-                                    int nextcol = col + dc[k];
-                                    if(nextrow<0 || nextcol<0 || nextrow>=h || nextcol>=w)
-                                    continue;
+                                for (int q = 0; q < 8; q++) {
+                                    int nextrow = row + drow[q];
+                                    int nextcol = col + dcol[q];
+
+                                    if (nextrow < 0 || nextcol < 0 || nextrow >= h || nextcol >=     w)
+                                        continue;
 
                                     if (!visited[nextrow][nextcol] && graph[nextrow][nextcol] == 1) {
                                         visited[nextrow][nextcol] = true;
                                         queue.add(new int[] { nextrow, nextcol });
                                     }
                                 }
-
                             }
+
                         }
                     }
 
@@ -63,6 +63,7 @@ public class Baek4963 {
             }
 
         }
+        
         System.out.println(sb);
     }
 }

@@ -57,7 +57,7 @@ public class Baek1926 {
                 }
             }
         }
-        sb.append(count+"\n" + max);
+        sb.append(count + "\n" + max);
 
         System.out.println(sb);
     }
