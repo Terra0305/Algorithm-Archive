@@ -10,7 +10,6 @@ public class Baek7576 {
 
         int w = Integer.parseInt(st.nextToken());
         int h = Integer.parseInt(st.nextToken());
-
         int[][] graph = new int[h][w];
         Queue<int[]> queue = new LinkedList<>();
 
