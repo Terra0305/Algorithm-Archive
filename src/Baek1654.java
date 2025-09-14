@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Baek1654 {
@@ -9,34 +8,38 @@ public class Baek1654 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
 
-        // 여기에 실제 문제 풀이 코드 작성
-        int K = Integer.parseInt(st.nextToken());
-        int N = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken()); // 전선갯수
+        int M = Integer.parseInt(st.nextToken()); // 전선조각
 
-        Long[] Lanarr = new Long[K];
-
-        for (int i = 0; i < K; i++) {
-            Lanarr[i] = Long.parseLong(br.readLine());
+        int[] lanArr = new int[N];
+        int max = 0;
+        for (int i = 0; i < N; i++) {
+            lanArr[i] = Integer.parseInt(br.readLine());
+            if (max < lanArr[i])
+                max = lanArr[i];
         }
+        long low = 1;
+        long high = max;
+        long result=0;
+        while (low <= high) {
+            long mid = low + (high - low) / 2;
+            long sum = 0;
 
-        Arrays.sort(Lanarr);
-
-        Long start = (long) 1;
-        Long end = Lanarr[Lanarr.length - 1];
-
-        while (start <= end) {
-            long mid = start + (end - start) / 2;
-            long count = 0;
-
-            for(int i=0;i<K;i++){
-                count+=Lanarr[i]/mid;
+            for (int i = 0; i < N; i++) {
+                if (lanArr[i] > mid) { 
+                    sum += (lanArr[i] / mid);
+                }
             }
-            if(count>=N)
-            start = mid + 1;
-            else
-            end = mid - 1;
+            if(sum>=M){
+                result = mid;
+                low = mid+1;
+            }else{
+                high= mid-1;
+            }
         }
-        sb.append(end);
+
+        sb.append(result);
+
         System.out.println(sb);
     }
 }
