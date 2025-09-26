@@ -1,7 +1,10 @@
 # Compiled output
 /out/
 /bin/
+*.class
 
+# Log files
+*.log
 # IntelliJ IDEA
 .idea/
 *.iml
