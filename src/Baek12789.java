@@ -17,9 +17,7 @@ public class Baek12789 {
         }
         int currentNum = 1;
 
-        // while문 하나로 큐와 스택을 동시에 처리
         while (!queue.isEmpty()) {
-            // 1순위: 큐의 맨 앞이 순서에 맞는지 확인
             if (queue.peek() == currentNum) {
                 queue.poll();
                 currentNum++;
@@ -42,7 +40,6 @@ public class Baek12789 {
             }
         }
 
-        // 최종적으로 스택이 비어있으면 성공!
         if (stack.isEmpty())
             sb.append("Nice");
         else
