@@ -7,9 +7,9 @@
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             StringBuilder sb = new StringBuilder();
 
-            int N = Integer.parseInt(br.readLine());
+            int N = Integer.parseInt(br.readLine());              
 
-            long[] dp = new long[1001];
+            long[] dp = new long[1001];                
 
             dp[1] = 1;
             dp[2] = 3;
