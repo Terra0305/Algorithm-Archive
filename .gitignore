@@ -10,4 +10,6 @@
 *.iml
 
 # VS Code
-.vscode/
+.vscode/".gradle/" 
+"build/" 
+"*.bin" 
