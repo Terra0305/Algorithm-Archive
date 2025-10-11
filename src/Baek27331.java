@@ -9,7 +9,7 @@ public class Baek27331 {
 
         String a = br.readLine();
         String b = br.readLine();
-
+ 
         sb.append(a+b);
         System.out.println(sb);
     }
