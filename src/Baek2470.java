@@ -15,34 +15,44 @@ public class Baek2470 {
             yongaek[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(yongaek);
-        int[] answer = Func(yongaek);
 
-        System.out.println(answer[0] + " " + answer[1]);
+        int[] result = Func(yongaek);
+        Arrays.sort(result);
+        System.out.println(result[0] + " " + result[1] + " " + result[2]);
     }
 
     public static int[] Func(int a[]) {
-        int start = 0;
-        int end = a.length - 1;
-        int min_diff = Integer.MAX_VALUE;
-        int mina = 0;
-        int minb = 0;
+        long min_diff = Long.MAX_VALUE;
+        long mina = 0;
+        long minb = 0;
+        long minc = 0;
 
-        while (start < end) {
-            int sum = a[start] + a[end];
+        for (int i = 0; i < a.length - 2; i++) {
+            int start = i + 1;
+            int end = a.length - 1;
 
-            if (Math.abs(sum) < min_diff) {
-                min_diff = Math.abs(sum);
-                mina = a[start];
-                minb = a[end];
+            while (start < end) {
+                long sum = (long) a[i] + a[start] + a[end];
+
+                if (Math.abs(sum) < min_diff) {
+                    min_diff = Math.abs(sum);
+                    mina = a[start];
+                    minb = a[end];
+                    minc = a[i];
+                }
+                if (sum == 0) {
+                    return new int[] { a[start], a[end], a[i] };
+                }
+
+                if (sum < 0) {
+                    start++;
+                } else {
+                    end--;
+                }
             }
-            if (sum < 0) {
-                start++;
-            } else {
-                end--;
-            }
+
         }
-
-        return new int[] { mina, minb };
+        return new int[] { (int) mina, (int) minb, (int) minc };
 
     }
 }
