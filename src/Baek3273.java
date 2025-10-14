@@ -8,38 +8,34 @@ public class Baek3273 {
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
-        int[] narr = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
 
+        int[] arr = new int[n];
+
         for (int i = 0; i < n; i++) {
-            narr[i] = Integer.parseInt(st.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-
-        int x = Integer.parseInt(br.readLine());
-
-        Arrays.sort(narr);
-        sb.append(TwoPointer(narr, x));
-
+        int target = Integer.parseInt(br.readLine());
+        Arrays.sort(arr);
+        sb.append(Twopointer(arr, target));
         System.out.println(sb);
     }
 
-    public static int TwoPointer(int[] arr, int target) {
-        int left = 0;
-        int right = arr.length - 1;
-        int count=0;
-        while (left < right) {
-            int sum = 0;
+    public static int Twopointer(int[] arr, int target) {
+        int count = 0;
+        int start = 0;
+        int end = arr.length - 1;
 
-            sum = arr[left] + arr[right];
+        while (start < end) {
+            int sum = arr[start] + arr[end];
 
-            if (sum < target) {
-                left++;
-            } else if (sum > target) {
-                right--;
-            } else {
-                left++;
-                right--;
+            if (sum < target)
+                start++;
+            else if (sum > target)
+                end--;
+            else {
                 count++;
+                start++;
             }
         }
         return count;

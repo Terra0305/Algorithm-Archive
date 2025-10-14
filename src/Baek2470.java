@@ -7,47 +7,42 @@ public class Baek2470 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int N = Integer.parseInt(br.readLine());
-        int[] Narr = new int[N];
+        int n = Integer.parseInt(br.readLine());
+        int[] yongaek = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        for (int i = 0; i < N; i++) {
-            Narr[i] = Integer.parseInt(st.nextToken());
+        for (int i = 0; i < n; i++) {
+            yongaek[i] = Integer.parseInt(st.nextToken());
         }
-        Arrays.sort(Narr);
+        Arrays.sort(yongaek);
+        int[] answer = Func(yongaek);
 
-        int []result =TwoPointer(Narr);
-        for(int i=0;i<result.length;i++){
-            sb.append(result[i]+" ");
-        }
-        System.out.println(sb);
+        System.out.println(answer[0] + " " + answer[1]);
     }
 
-    public static int[] TwoPointer(int[] arr) {
-        
-        int left = 0;
-        int right = arr.length - 1;
-        int min = Integer.MAX_VALUE;
-        int resultleft = 0;
-        int resultright = 0;
-        while (left < right) {
-            int sum = 0;
-            sum = arr[left] + arr[right];
-            if (min > Math.abs(sum)) {
-                min = Math.abs(sum);
-                resultright = right;
-                resultleft = left;
-            }
+    public static int[] Func(int a[]) {
+        int start = 0;
+        int end = a.length - 1;
+        int min_diff = Integer.MAX_VALUE;
+        int mina = 0;
+        int minb = 0;
 
-            if (sum<0) {
-                left++;
-            } else if (sum>0) {
-                right--;
-            }else{
-                break;
-            }
+        while (start < end) {
+            int sum = a[start] + a[end];
 
+            if (Math.abs(sum) < min_diff) {
+                min_diff = Math.abs(sum);
+                mina = a[start];
+                minb = a[end];
+            }
+            if (sum < 0) {
+                start++;
+            } else {
+                end--;
+            }
         }
-        return new int[] { arr[resultleft], arr[resultright] };
+
+        return new int[] { mina, minb };
+
     }
 }
