@@ -16,30 +16,30 @@ public class Baek2805 {
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             trees[i] = Integer.parseInt(st.nextToken());
-            if (trees[i] > max)
+            if (max < trees[i])
                 max = trees[i];
         }
+
         int low = 0;
         int high = max;
-        int result = 0;
+        int result = 0; // 가장 높았던 톱의 높이를 저장해둠
 
         while (low <= high) {
-            int mid = low + (high - low) / 2;
-            long sum = 0;
+            int mid = low + (high - low) / 2; // 현재 전기톱 높이
+            int sum = 0;
 
-            for (int i = 0; i < N; i++) {
-                if (trees[i] > mid)
-                    sum += (trees[i] - mid);
+            for (int i = 0; i < trees.length; i++) {
+                if (trees[i] > mid) {
+                    sum += trees[i] - mid;
+                }
             }
-            if(sum>=M){
-                result =mid;
-                low = mid+1;
-            }else{
-                high = mid-1;
-            }
+            if (sum >= M) {
+                result = mid;
+                low = mid + 1;
+            } else
+                high = mid - 1;
         }
-
-        System.out.println(result);
-
+        sb.append(result);
+        System.out.println(sb);
     }
 }
