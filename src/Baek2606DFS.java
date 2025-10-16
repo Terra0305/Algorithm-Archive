@@ -2,47 +2,48 @@ import java.io.*;
 import java.util.*;
 
 public class Baek2606DFS {
+    static ArrayList<Integer>[] graph;
     static boolean[] visited;
-    static ArrayList<Integer>[] graph ;
-    static int N, M; // 필요하면 이것들도 뺄 수 있음
     static int count = 0;
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        N = Integer.parseInt(br.readLine());
-        M = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
+        int M = Integer.parseInt(br.readLine());
 
-        visited = new boolean[N + 1];
         graph = new ArrayList[N + 1];
+        visited = new boolean[N + 1];
 
-        for(int i=1;i<=N;i++){
+        for (int i = 1; i <= N; i++) {
             graph[i] = new ArrayList<>();
         }
 
         for (int i = 0; i < M; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
+
             int c1 = Integer.parseInt(st.nextToken());
             int c2 = Integer.parseInt(st.nextToken());
 
             graph[c1].add(c2);
-            graph[c2].add(c1); // 인접리스트에 입력.
+            graph[c2].add(c1);
         }
-            dfs(1);
-            System.out.println(count-1);
+
+        dfs(1);
+
+        System.out.println(count-1);
     }
 
-    public static void dfs(int CurrentNodes) {
-        visited[CurrentNodes] = true;
+    public static void dfs(int computernum) {
+        visited[computernum] = true;
         count++;
 
-        for(int i=0;i<graph[CurrentNodes].size();i++){
-            int neighbor = graph[CurrentNodes].get(i);
-
-            if(!visited[neighbor]){
+        for (int i = 0; i < graph[computernum].size(); i++) {
+            int neighbor = graph[computernum].get(i);
+            if (!visited[neighbor])
                 dfs(neighbor);
-            }
         }
     }
 }

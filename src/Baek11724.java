@@ -2,6 +2,10 @@ import java.io.*;
 import java.util.*;
 
 public class Baek11724 {
+    static int count = 0;
+    static boolean[] visited;
+    static ArrayList<Integer>[] graph;
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -11,8 +15,8 @@ public class Baek11724 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        boolean[] visited = new boolean[N + 1];
-        ArrayList<Integer>[] graph = new ArrayList[N + 1];
+        visited = new boolean[N + 1];
+        graph = new ArrayList[N + 1];
 
         for (int i = 1; i <= N; i++) {
             graph[i] = new ArrayList<>();
@@ -26,32 +30,24 @@ public class Baek11724 {
             graph[a1].add(a2);
             graph[a2].add(a1);
         }
-
-        int count = 0;
-
-        for (int i = 1; i <= N; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                count++;
-
-                Queue<Integer> queue = new LinkedList<>();
-                queue.add(i);
-                while(!queue.isEmpty()){
-                    int current = queue.poll();
-
-                    for(int j=0;j<graph[current].size();j++){
-                        int negihbor = graph[current].get(j);
-
-                        if(!visited[negihbor]){
-                            visited[negihbor]=true;
-                            queue.add(negihbor);
-                        }
-                    }
-                }
+        for(int i=1;i<=N;i++){
+            if(!visited[i]){
+                count++;  
+                dfs(i);
             }
-
         }
-        sb.append(count);
-        System.out.println(sb);
+        
+    }
+    public static void dfs(int num){
+        
+        visited[num] = true;
+
+        for(int i=0;i<graph[num].size();i++){
+            int neighbor = graph[num].get(i);
+            
+            if(!visited[neighbor]){
+                dfs(neighbor);
+            }
+        }
     }
 }

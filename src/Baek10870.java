@@ -7,18 +7,20 @@ public class Baek10870 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        int T = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine());
 
-        sb.append(Pibo(T));
+        sb.append(Recursive(n));
+
         System.out.println(sb);
     }
 
-    public static int Pibo(int n) {
-        if (n == 1)
+    public static int Recursive(int N) {
+        if (N == 1)
             return 1;
-        if (n == 0)
+        if (N == 0)
             return 0;
 
-        return Pibo(n - 1)+Pibo(n-2);
+        return Recursive(N - 1) + Recursive(N - 2);
+
     }
 }

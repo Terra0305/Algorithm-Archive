@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.*;
 
 public class Baek2775 {
+    
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,7 +17,7 @@ public class Baek2775 {
 
         for (int i = 1; i <= 14; i++) {
             for (int j = 1; j <= 14; j++) {
-                people[i][j] = people[i - 1][j] + people[i ][j-1];
+                people[i][j] = people[i - 1][j] + people[i][j - 1];
             }
         }
         int T = Integer.parseInt(br.readLine());
@@ -28,4 +30,6 @@ public class Baek2775 {
 
         System.out.println(sb);
     }
+
+    
 }
