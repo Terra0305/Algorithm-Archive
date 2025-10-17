@@ -1,0 +1,23 @@
+{
+	"Baekjoon Template": {
+		"prefix": "boj",
+		"body": [
+			"import java.io.*;",
+			"import java.util.*;",
+			"",
+			"public class ${TM_FILENAME_BASE} {",
+			"    public static void main(String[] args) throws IOException {",
+			"        ",
+			"        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));",
+			"        StringTokenizer st= new StringTokenizer(br.readLine());",
+			"        StringBuilder sb = new StringBuilder();",
+			"",
+			"        $1",
+			"",
+			"        System.out.println(sb);",
+			"    }",
+			"}"
+		],
+		"description": "Baekjoon Java Template with BufferedReader, StringTokenizer, StringBuilder"
+	}
+}

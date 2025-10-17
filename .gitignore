@@ -10,4 +10,4 @@
 *.iml
 
 # VS Code
-.vscode/
+.vscode/.DS_Store
