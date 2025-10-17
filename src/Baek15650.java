@@ -1,13 +1,13 @@
 import java.io.*;
 import java.util.*;
 
-public class Baek15649 {
+public class Baek15650 {
     static int N;
     static int M;
+    static StringBuilder sb = new StringBuilder();
+    static int count = 0;
     static boolean[] visited;
     static int[] arr;
-    static int count;
-    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
 
@@ -16,29 +16,30 @@ public class Baek15649 {
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-
+        
         visited = new boolean[N + 1];
         arr = new int[M];
 
-        Recursive(0);
-    
-
-
+        Recursive(0,1);
         System.out.println(sb);
     }
 
-    public static void Recursive(int depth) {
+    public static void Recursive(int depth, int start) {
         if (depth == M) {
-            for (int i = 0; i < M; i++) {  //정해진 깊이에 다 닿으면
-                sb.append(arr[i]).append(" ");   //쌓였던 숫자들을 StringBuilde에 넣기.
+            for (int i = 0; i < M; i++) {
+                sb.append(arr[i]).append(" ");
             }
-            sb.append("\n"); //줄바꿈 하고
-            return; //퇴근
+            sb.append("\n");
+            return;
         }
-
-        for (int i = 1; i <=N; i++) { 
-                arr[depth] = i; 
-                Recursive(depth + 1);             
-        }
+        
+        for (int i = start; i <= N; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                arr[depth] = i;
+                Recursive(depth + 1,i+1);
+                visited[i] = false;
+            }
+        }  
     }
 }
