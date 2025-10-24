@@ -16,7 +16,7 @@ public class Baek15650 {
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        
+
         visited = new boolean[N + 1];
         arr = new int[M];
 
