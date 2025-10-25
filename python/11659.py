@@ -15,3 +15,6 @@ for _ in range(M):
     
     result = prefix_sum[end] -prefix_sum[start-1]
     print(result)
+    
+    
+    
