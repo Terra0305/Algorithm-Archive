@@ -7,3 +7,5 @@ for coin in coin_types:
     result+=N//coin
     N%=coin
 print(result)
+
+
