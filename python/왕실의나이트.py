@@ -1,18 +1,22 @@
-current = input()
-row = int(current[1])
+import sys
 
-column=int(ord(current[0])) -int(ord('a'))+1
+input = sys.stdin.readline
 
-steps=[(-2,-1),(-1,-2),(1,-2),(2,-1),(1,2),(-1,2),(-2,1)]
+input_data = input() 
 
-result=0
+count =0 
+row = int(input_data[1]) 
+column = ord(input_data[0]) - ord('a')+1
+
+steps = [(-2,-1),(-2,1),(2,-1),(2,1),(-1,-2),(-1,2),(1,-2),(1,2)]
 
 for step in steps:
-    next_row = row+step[0]
-    next_col = column+step[1]
+    nextrow=row+step[0] 
+    nextcol=column+step[1]
     
-    if next_row>=1 and next_col<=8 and next_col>=1 and next_col<=8:
-        result+=1
+    if nextrow>=1 and nextcol>=1 and nextrow<=8 and nextcol<=8:
+        count+=1
         
-print(result)
+
+print(count)
     
