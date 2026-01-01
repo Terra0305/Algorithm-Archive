@@ -1,10 +1,21 @@
 def solution(progresses, speeds):
     answer = []
-    current_progresses =0 #현재 완료되어야 하는 작업 인덱스
-    success = 1 #완료된 숫자 
-    while True:
-        for i in range(len(progresses)-1):
-         answer.append   
+    
+    while len(progresses) > 0:
+      
+        for i in range(len(progresses)):
+            progresses[i] += speeds[i]
+
+        successs = 0
+        
+        while len(progresses) > 0 and progresses[0] >= 100:
+            successs += 1
+            progresses.pop(0)
+            speeds.pop(0)
+
+        if successs > 0:
+            answer.append(successs)
+
     return answer
 
-print(solution([93,30,55],[1,30,5]))
+print(solution([93, 30, 55], [1, 30, 5])) 
