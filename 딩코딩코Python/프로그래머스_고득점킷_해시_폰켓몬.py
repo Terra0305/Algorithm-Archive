@@ -1,12 +1,22 @@
 def solution(nums):
     dict={} #포켓몬을 담을 딕셔너리
-    can_get_num = len(nums)/2
-    get_count=0
+    can_get_num = int(len(nums)/2)#가져갈 수 있는 포켓몬의 수
+    get_count=0 #현재 실제로 가져간 포켓몬의 수
     
+    for current_pocketmon_num in nums:
+        if current_pocketmon_num in dict:
+            dict[current_pocketmon_num]+=1
+        else:   
+            dict[current_pocketmon_num]=1 
     
+    pocketmon_types = len(dict)
     
-    
-    answer = 0
+    if pocketmon_types > can_get_num:
+        answer = can_get_num
+    else:
+        answer = pocketmon_types
+
+        
     return answer
 
 print(solution([3,1,2,3]))
