@@ -10,8 +10,9 @@ def solution(n, computers):
                 
     
     for i in range(n):
-        dfs(i)
-        answer+=1
+        if not visited[i]:
+            dfs(i)
+            answer+=1
         
     return answer
         
