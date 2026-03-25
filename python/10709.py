@@ -1,5 +1,3 @@
-
-
 H,W = map(int,input().split())
 
 #H = 가로 W=세로
